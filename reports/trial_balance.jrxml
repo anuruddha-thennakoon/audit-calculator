@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="trial_balance" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c8df8d3f-84ba-44d8-aa9d-eba676de5914">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="line1" class="java.lang.String"/>
+	<parameter name="line2" class="java.lang.String"/>
+	<parameter name="line3" class="java.lang.String"/>
+	<parameter name="credit_total" class="java.lang.String"/>
+	<parameter name="debit_total" class="java.lang.String"/>
+	<field name="Description" class="java.lang.String"/>
+	<field name="Debit" class="java.lang.String"/>
+	<field name="Credit" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="4" width="554" height="26" uuid="569ac56e-a851-4654-90a3-cf6c5ef1b8ea"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Trial Balance]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="70" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="1" width="554" height="20" uuid="7dc1a588-1f5f-48b2-9bec-71a15d8e1830"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{line1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="21" width="554" height="20" uuid="8485233b-51d5-44ad-a73f-24cd9b416134"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{line2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="41" width="554" height="20" uuid="54ae8a73-f99b-45ab-ba4b-b5f41e1e89d8"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{line3}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="8" width="283" height="20" uuid="f1451a5b-06cb-4e2e-8764-8cb75f4336f2"/>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="8" width="125" height="20" uuid="e43f7fc8-02ac-48a3-a3b7-4f116f50c9e0"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Debit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="8" width="125" height="20" uuid="d4c8f497-fb48-42b8-a58e-60def29b70b7"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Credit]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="283" height="20" uuid="cf61388e-c394-41a4-b0e9-f77a6e410c8b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="0" width="125" height="20" uuid="4e2edbee-bb5f-47ec-80bb-e0dcb6dff64b"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Debit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="0" width="125" height="20" uuid="f255c414-8d0f-43bf-af1b-b39b54cc0461"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Credit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="423" y="5" width="125" height="20" uuid="ab92367e-0250-4c32-a4d2-3d88ca045143"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{credit_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="5" width="125" height="20" uuid="e1658b99-3d74-4da4-819c-aaa6c8042e16"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{debit_total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="248" y="5" width="50" height="20" uuid="7eb50789-35fd-4abe-832d-5516cd99ee66"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="430" y="4" width="118" height="1" uuid="32a85504-e4c0-40b2-9f09-078cc09e8fda"/>
+			</line>
+			<line>
+				<reportElement x="430" y="26" width="118" height="1" uuid="6e9a7243-dd43-472d-9a81-61424358c2a7"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="305" y="26" width="118" height="1" uuid="7e4ea982-6c4f-4b07-925a-b90cc0b774fa"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="303" y="4" width="120" height="1" uuid="4d75ff8e-28f8-4f83-954c-592cd78e488d"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
